@@ -1,11 +1,15 @@
 def fizzbuzz():
-    entrada = input("Introduce un número: ")
+    entrada = input("Introduce un número (1 a 100): ")
 
     try:
         numero = int(entrada)
     except ValueError:
         print(f'No me vengas con "{entrada}" aquí solo hablamos con números')
         return False
+
+    if numero < 1 or numero > 100:
+        print("El rango de números es de 1 a 100, respétame eso al menos por favor")
+        return True
 
     resultado = ""
 
