@@ -15,4 +15,7 @@ def fizzbuzz():
 
     print(resultado or f"El número {numero} no es divisible ni entre 3 ni entre 5")
 
-fizzbuzz()
+
+while True:
+    fizzbuzz()
+    print("¡Dame otro!")
