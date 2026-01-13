@@ -5,7 +5,7 @@ def fizzbuzz():
         numero = int(entrada)
     except ValueError:
         print(f'No me vengas con "{entrada}" aquí solo hablamos con números')
-        return
+        return False
 
     resultado = ""
 
@@ -15,8 +15,13 @@ def fizzbuzz():
         resultado += "Buzz"
 
     print(resultado or f"El número {numero} no es divisible ni entre 3 ni entre 5")
+    return True
 
 
 while True:
-    fizzbuzz()
-    print("¡Dame otro!")
+    correcto = fizzbuzz()
+
+    if correcto:
+        print("¡Dame otro!")
+    else:
+        print("Dame un número de verdad, no tonterías de esas")
