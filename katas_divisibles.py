@@ -1,11 +1,12 @@
 def fizzbuzz():
     entrada = input("Introduce un número: ")
 
-    if not entrada.isdigit():
+    try:
+        numero = int(entrada)
+    except ValueError:
         print(f'No me vengas con "{entrada}" aquí solo hablamos con números')
         return
 
-    numero = int(entrada)
     resultado = ""
 
     if numero % 3 == 0:
