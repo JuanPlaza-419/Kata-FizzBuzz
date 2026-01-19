@@ -1,113 +1,55 @@
-import unittest
-from unittest.mock import patch
-from katas_divisibles import fizzbuzz
+from ..katas_divisibles import fizzbuzz
+import pytest
 
-def test_numero_divisible_entre_3():
-    """
-    Entrada: 3
-    Comportamiento esperado:
-    - El sistema reconoce el número como válido
-    - Imprime 'Fizz'
-    - Solicita un nuevo número
-    """
-    pass
+def test_fizzbuzz_divisible_entre_3():
+    #Revisa si es un numero divisible por 3
+    assert fizzbuzz(3) == "Fizz"
 
 
-def test_numero_divisible_entre_5():
-    """
-    Entrada: 5
-    Comportamiento esperado:
-    - El sistema reconoce el número como válido
-    - Imprime 'Buzz'
-    - Solicita un nuevo número
-    """
-    pass
+def test_fizzbuzz_divisible_entre_5():
+    #Revisa si es un numero divisible por 5
+    assert fizzbuzz(5) == "Buzz"
 
 
-def test_numero_divisible_entre_3_y_5():
-    """
-    Entrada: 15
-    Comportamiento esperado:
-    - El sistema reconoce el número como válido
-    - Imprime 'FizzBuzz'
-    - Solicita un nuevo número
-    """
-    pass
+def test_fizzbuzz_divisible_entre_3_y_5():
+    #Revisa si es un numero divisible por 3 y 5
+    assert fizzbuzz(15) == "FizzBuzz"
 
 
-def test_numero_no_divisible():
-    """
-    Entrada: 7
-    Comportamiento esperado:
-    - El sistema reconoce el número como válido
-    - Indica que el número no es divisible ni entre 3 ni entre 5
-    - Solicita un nuevo número
-    """
-    pass
+def test_fizzbuzz_no_divisible_1():
+    #Revisa si es un nummero no divisible como el 1
+    assert fizzbuzz(1) == "Es 1, no es divisible"
 
 
-def test_numero_fuera_de_rango():
-    """
-    Entrada: 101
-    Comportamiento esperado:
-    - El sistema detecta que el número está fuera del rango 1 a 100
-    - Muestra el mensaje de rango inválido
-    - Solicita un número válido
-    """
-    pass
+def test_fizzbuzz_no_divisible_7():
+    #Revisa si es un nummero no divisible como el 7
+    assert fizzbuzz(7) == "Es 7, no es divisible"
 
 
-def test_texto_galleta():
-    """
-    Entrada: 'galleta'
-    Comportamiento esperado:
-    - El sistema detecta que la entrada no es numérica
-    - Muestra un mensaje indicando que solo se aceptan números
-    - Solicita un número válido
-    """
-    pass
+def test_fizzbuzz_numero_grande_divisible_3():
+    #Revisa si el numero es un numero mayor a 3
+    assert fizzbuzz(99) == "Fizz"
 
 
-def test_texto_chorizo():
-    """
-    Entrada: 'chorizo'
-    Comportamiento esperado:
-    - El sistema detecta que la entrada no es numérica
-    - Muestra un mensaje indicando que solo se aceptan números
-    - Solicita un número válido
-    """
-    pass
+def test_fizzbuzz_numero_grande_divisible_5():
+    #Revisa si el numero es un numero mayor a 5
+    assert fizzbuzz(100) == "Buzz"
 
 
-def test_texto_leprechaun():
-    """
-    Entrada: 'leprechaun'
-    Comportamiento esperado:
-    - El sistema detecta que la entrada no es numérica
-    - Muestra un mensaje indicando que solo se aceptan números
-    - Solicita un número válido
-    """
-    pass
+def test_fizzbuzz_retorna_string():
+    #Revisa si retorna el numero
+    resultado = fizzbuzz(8)
+    assert isinstance(resultado, str)
 
 
-def test_texto_roblox():
-    """
-    Entrada: 'roblox'
-    Comportamiento esperado:
-    - El sistema detecta que la entrada no es numérica
-    - Muestra un mensaje indicando que solo se aceptan números
-    - Solicita un número válido
-    """
-    pass
+def test_fizzbuzz_cero():
+    #Revisa si el numero es 0
+    assert fizzbuzz(0) == "Es 0, no es divisible"
 
 
-def test_texto_kolto():
+def test_fizzbuzz_numero_negativo():
+    #Revisa si el numero es negativo
     """
-    Entrada: 'kolto'
-    Comportamiento esperado:
-    - El sistema detecta que la entrada no es numérica
-    - Muestra un mensaje indicando que solo se aceptan números
-    - Solicita un número válido
+    No valen numeros negativos.
     """
-    pass
-
+    assert fizzbuzz(-15) == "FizzBuzz"
