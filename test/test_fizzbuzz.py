@@ -1,4 +1,4 @@
-from ..katas_divisibles import fizzbuzz
+from katas_divisibles import fizzbuzz
 import pytest
 
 def test_fizzbuzz_divisible_entre_3():
